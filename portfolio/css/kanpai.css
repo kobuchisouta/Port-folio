@@ -1,0 +1,427 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Oleo Script", Courier, monospace;
+    overflow-x: hidden;
+}
+
+/* ヘッダー - PC版維持 */
+.c-header {
+    align-items: center;
+    background-color: rgba(138, 134, 155, 0.5);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem; 
+    width: 100%;
+}
+
+.c-header__logo {
+    color: white; 
+    min-width: 80px; 
+    text-decoration: none;
+}
+
+.c-header__list {
+    box-sizing: border-box;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.c-header__list-item {
+    list-style: none;
+    text-decoration: none;
+}
+
+.c-header__list-item a {
+    color: white;
+}
+
+.c-header__list-link {
+    color: #000; 
+    display: block;
+    margin-right: 20px; 
+    text-decoration: none;
+    padding: 10px 0px; 
+}
+
+.c-header__list-link:hover {
+    filter: opacity(0.6); 
+}
+
+.c-hamburger-menu {
+    position: relative;
+}
+
+.c-hamburger-menu__input {
+    display: none;
+}
+
+.c-hamburger-menu__bg {
+    background-color: #000; 
+    cursor: pointer;
+    display: none;
+    height: 100vh;
+    left: 0;
+    opacity: 0.4; 
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+#hamburger:checked ~ .c-hamburger-menu__bg {
+    display: block;
+}
+
+.c-hamburger-menu__button {
+    display: none;
+}
+
+.c-hamburger-menu__button-mark {
+    background-color: #000; 
+    display: block;
+    height: 1px;
+    transition: 0.3s; 
+    width: 20px; 
+}
+
+/* メインコンテンツ - PC版維持 */
+.title_wrap{
+    display: flex;
+    flex-direction: column;
+    padding: 100px 100px;
+}
+
+.title_wrap h1 {
+    font-size: 5rem;
+}
+
+.Project_wrap__img img{
+    width: 750px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.Project_wrap__img figure{
+    margin: 0 auto;
+    width: 750px;
+    height: 500px;
+    object-fit: cover;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    font-family: noto-sans-jp, sans-serif;
+    padding: 50px 0;
+}
+
+.c-text {
+    overflow: hidden;
+    display: flex;
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    z-index: -1;
+    position: relative;
+    top: -350px;
+}
+
+.c-text__item {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 120px;
+    animation: marquee 24s linear infinite;
+}
+
+/* アニメーション */
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.Project_explanation_wrap{
+    font-family: noto-sans-jp, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    gap: 50px;
+    font-size: 1.5rem;
+}
+
+.Project_explanation_wrap span{
+    font-weight: bold;
+}
+
+.target{
+    font-size: 2rem;
+}
+
+.comprehensive_layout_img{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.comprehensive_layout_img img{
+    width: 600px;
+    object-fit: cover;
+}
+
+/* フッター - PC版維持 */
+footer {
+    padding: 60px 20px;
+    margin-top: 100px;
+    text-align: center;
+    background-color: #f3f6f8;
+}
+
+.contact-label {
+    font-size: 3rem;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+    margin-top: 50px;
+    font-family: 'Oleo Script', sans-serif;
+}
+
+.email-link {
+    font-size: 5rem;
+    color: #222;
+    text-decoration: underline;
+    font-family: 'Oleo Script', sans-serif;
+}
+
+.name {
+    font-size: 48px;
+    font-weight: normal;
+    margin: 40px 0 10px;
+    font-family: 'Oleo Script', sans-serif;
+}
+
+.portfolio {
+    font-size: 64px;
+    font-weight: normal;
+    color: #ccc;
+    margin: 0;
+    font-family: 'Oleo Script', sans-serif;
+}
+
+/* モバイル版のみのスタイル (750px以下) */
+@media screen and (max-width: 750px) {
+    /* ハンバーガーメニュー */
+    .c-hamburger-menu__list {
+        background-color: rgba(138, 134, 155, 1);
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        padding: 2rem; 
+        position: absolute;
+        transform: translateX(-100%);
+        transition: 0.3s; 
+        top: 100%;
+        width: 100%;
+    }
+
+    #hamburger:checked ~ .c-hamburger-menu__list {
+        transform: translateX(0%);
+        transition: 0.3s;
+    }
+
+    .c-hamburger-menu__button {
+        align-items: center;
+        appearance: none;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 5px; 
+        height: 32px; 
+        justify-content: center;
+        width: 32px; 
+    }
+
+    #hamburger:checked ~ .c-hamburger-menu__button .c-hamburger-menu__button-mark:nth-of-type(1) {
+        transform: translate(2px, 1px) rotate(45deg); 
+        transform-origin: 0%;
+    }
+    #hamburger:checked ~ .c-hamburger-menu__button .c-hamburger-menu__button-mark:nth-of-type(2) {
+        opacity: 0;
+    }
+    #hamburger:checked ~ .c-hamburger-menu__button .c-hamburger-menu__button-mark:nth-of-type(3) {
+        transform: translate(2px, 3px) rotate(-45deg); 
+        transform-origin: 0%;
+    }
+
+    /* メインコンテンツのモバイル対応 */
+    .title_wrap {
+        padding: 80px 20px 40px;
+        text-align: center;
+    }
+
+    .title_wrap h1 {
+        font-size: 2.5rem;
+    }
+
+    .title_wrap p {
+        font-size: 1rem;
+    }
+
+    .Project_wrap__img figure {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .Project_wrap__img img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    figcaption {
+        font-size: 1rem;
+        padding: 20px 15px;
+        line-height: 1.6;
+    }
+
+    /* 流れている文字を非表示 */
+    .c-text {
+        display: none;
+    }
+
+    .Project_explanation_wrap {
+        padding: 40px 20px;
+        gap: 30px;
+        font-size: 1rem;
+    }
+
+    .target {
+        font-size: 1.2rem;
+    }
+
+    .Project_explanation_wrap div {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .comprehensive_layout_img {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .comprehensive_layout_img img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* フッターのモバイル対応 */
+    footer {
+        padding: 40px 20px;
+        margin-top: 50px;
+    }
+
+    .contact-label {
+        font-size: 1.8rem;
+        margin-top: 20px;
+    }
+
+    .email-link {
+        font-size: 1.5rem;
+        word-break: break-all;
+    }
+
+    .name {
+        font-size: 2rem;
+        margin: 20px 0 5px;
+    }
+
+    .portfolio {
+        font-size: 2.5rem;
+    }
+}
+
+/* 小さなスマホ対応 (480px以下) */
+@media screen and (max-width: 480px) {
+    .title_wrap h1 {
+        font-size: 2rem;
+    }
+
+    .Project_explanation_wrap {
+        padding: 30px 15px;
+        gap: 20px;
+    }
+
+    .contact-label {
+        font-size: 1.5rem;
+    }
+
+    .email-link {
+        font-size: 1.2rem;
+    }
+
+    .name {
+        font-size: 1.8rem;
+    }
+
+    .portfolio {
+        font-size: 2rem;
+    }
+}
+
+/* タブレットサイズ (751px〜1024px) */
+@media screen and (min-width: 751px) and (max-width: 1024px) {
+    .title_wrap {
+        padding: 100px 50px;
+    }
+
+    .title_wrap h1 {
+        font-size: 3.5rem;
+    }
+
+    .Project_wrap__img figure {
+        width: 90%;
+    }
+
+    .Project_wrap__img img {
+        width: 100%;
+    }
+
+    .comprehensive_layout_img {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .comprehensive_layout_img img {
+        width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .name {
+        font-size: 36px;
+    }
+    .portfolio {
+        font-size: 48px;
+    }
+    .email-link {
+        font-size: 18px;
+    }
+}
