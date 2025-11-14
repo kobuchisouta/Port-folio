@@ -198,7 +198,7 @@
                 </div>
             </section>
         </div>
-        <footer>
+        <footer id="Contact">
             <span class="contact-label">Contact</span>
             <a href="mailto:kobu0612@gmail.com" class="email-link">kobu0612@gmail.com</a>
             <h1 class="name">Souta Kobuchi</h1>
@@ -310,4 +310,28 @@
             window.addEventListener('resize', onResizeOrLoad);
             window.addEventListener('scroll', updateConnectorLinesOnScroll);
         });
+
+        // ハンバーガーメニュー内リンククリックで閉じてスクロール
+        document.querySelectorAll('.c-header__list-link[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // 飛び先のIDを取得
+                const targetId = link.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                // スムーズスクロール
+                const rect = target.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({
+                    top: rect,
+                    behavior: 'smooth'
+                });
+
+                // ハンバーガーを閉じる（チェックボックスOFF）
+                document.getElementById('hamburger').checked = false;
+            });
+        });
+
+
     </script>
