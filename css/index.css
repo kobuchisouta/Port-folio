@@ -160,7 +160,6 @@ main {
     background-color: rgba(138, 134, 155, 0.5);
 }
 
-/* ====== firstview を相対配置にして circle を重ねられるようにする ====== */
 .firstview {
     display: flex;
     justify-content: center;
@@ -169,7 +168,7 @@ main {
     height: 100%;
     padding: 0px 150px 0px 150px;
     flex-wrap: wrap;
-    position: relative; /* 追加：circleを重ねるため */
+    position: relative; 
     overflow: hidden;
 }
 
@@ -183,19 +182,16 @@ h1 span {
     color: white;
 }
 
-/* グローバルな img 固定指定は削除（以下で個別に制御） */
-/* firstview の写真を横幅70%で縦横比を維持する */
 .firstview-image {
-    width: 100%;              /* 指定どおり横幅70% */
-    max-width: 420px;        /* 必要に応じて上限を設定 */
-    height: auto;            /* 重要：縦横比を保持 */
-    aspect-ratio: 3 / 4;     /* 任意：縦長比率を明示（ブラウザ対応あり） */
-    object-fit: cover;       /* フィット方法 */
+    width: 100%;              
+    max-width: 420px;        
+    height: auto;            
+    aspect-ratio: 3 / 4;     
+    object-fit: cover;      
     filter: drop-shadow(8px 8px 8px #aaa);
     display: block;
 }
 
-/* Profile ボタン等 */
 .Profile_button {
     display: inline-block;
     background-color: rgba(138, 134, 155, 0.5);
@@ -221,10 +217,9 @@ h1 span {
     align-items: center;
     flex-direction: column;
     gap: 1rem;
-    z-index: 3; /* 画像より前面に出す */
+    z-index: 3; 
 }
 
-/* スマホでの振る舞い：狭い画面では横幅を90%にして見やすく */
 @media screen and (max-width: 750px) {
     .firstview {
         display: flex;
@@ -249,7 +244,7 @@ h1 span {
     }
 
     .firstview-image {
-        width: 90%;           /* スマホでは90%にして見やすさ優先 */
+        width: 90%;           
         max-width: none;
         height: auto;
         aspect-ratio: 3 / 4;
@@ -579,7 +574,6 @@ h3 span {
     100% { transform: rotate(360deg) translateZ(0); }
 }
 
-/* Tablet */
 @media screen and (max-width: 1024px) {
     .container {
         top: 6%;
@@ -594,7 +588,6 @@ h3 span {
     }
 }
 
-/* Smartphone */
 @media screen and (max-width: 750px) {
     .container {
         display: none !important;

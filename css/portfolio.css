@@ -10,7 +10,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ヘッダー - PC版維持 */
 .c-header {
     align-items: center;
     background-color: rgba(138, 134, 155, 0.5);
@@ -92,7 +91,6 @@ body {
     width: 20px; 
 }
 
-/* メインコンテンツ - PC版維持 */
 .title_wrap{
     display: flex;
     flex-direction: column;
@@ -141,7 +139,6 @@ figcaption {
     animation: marquee 24s linear infinite;
 }
 
-/* アニメーション */
 @keyframes marquee {
     0% {
         transform: translateX(0%);
@@ -182,7 +179,6 @@ figcaption {
     object-fit: cover;
 }
 
-/* フッター - PC版維持 */
 footer {
     padding: 60px 20px;
     margin-top: 100px;
@@ -221,9 +217,7 @@ footer {
     font-family: 'Oleo Script', sans-serif;
 }
 
-/* モバイル版のみのスタイル (750px以下) */
 @media screen and (max-width: 750px) {
-    /* ハンバーガーメニュー */
     .c-hamburger-menu__list {
         background-color: rgba(138, 134, 155, 1);
         align-items: flex-start;
@@ -269,7 +263,6 @@ footer {
         transform-origin: 0%;
     }
 
-    /* メインコンテンツのモバイル対応 */
     .title_wrap {
         padding: 80px 20px 40px;
         text-align: center;
@@ -301,7 +294,6 @@ footer {
         line-height: 1.6;
     }
 
-    /* 流れている文字を非表示 */
     .c-text {
         display: none;
     }
@@ -332,7 +324,6 @@ footer {
         height: auto;
     }
 
-    /* フッターのモバイル対応 */
     footer {
         padding: 40px 20px;
         margin-top: 50px;
@@ -358,7 +349,6 @@ footer {
     }
 }
 
-/* 小さなスマホ対応 (480px以下) */
 @media screen and (max-width: 480px) {
     .title_wrap h1 {
         font-size: 2rem;
@@ -386,7 +376,6 @@ footer {
     }
 }
 
-/* タブレットサイズ (751px〜1024px) */
 @media screen and (min-width: 751px) and (max-width: 1024px) {
     .title_wrap {
         padding: 100px 50px;
